@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Mail, Phone, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
 import Nav from "@/components/site/Nav";
 import Footer from "@/components/site/Footer";
+import Reveal from "@/components/site/Reveal";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

@@ -137,7 +137,7 @@ function FormSection() {
               </div>
             )}
           </form>
-        </div>
+        </Reveal>
       </div>
       <style>{`
         .input {

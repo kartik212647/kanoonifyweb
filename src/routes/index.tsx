@@ -184,24 +184,27 @@ function Trust() {
   return (
     <section className="border-y border-border bg-surface py-14">
       <div className="container-page">
-        <SectionHeader
-          center
-          wide
-          eyebrow="Trusted"
-          title="Trusted Digital Platform for India's Legal Ecosystem"
-          nowrapTitle
-        />
+        <Reveal>
+          <SectionHeader
+            center
+            wide
+            eyebrow="Trusted"
+            title="Trusted Digital Platform for India's Legal Ecosystem"
+            nowrapTitle
+          />
+        </Reveal>
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
-          {items.map(({ icon: Icon, t }) => (
-            <div
-              key={t}
-              className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-background p-6 text-center shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-card)]"
-            >
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
-                <Icon className="h-6 w-6" />
+          {items.map(({ icon: Icon, t }, i) => (
+            <Reveal key={t} delay={i * 70}>
+              <div
+                className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-background p-6 text-center shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-card)]"
+              >
+                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <div className="text-sm font-semibold">{t}</div>
               </div>
-              <div className="text-sm font-semibold">{t}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -477,48 +477,50 @@ function FinalCTA() {
   return (
     <section className="py-16 md:py-20">
       <div className="container-page">
-        <div
-          className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-primary to-primary-dark px-8 py-16 text-primary-foreground md:px-16"
-        >
+        <Reveal>
           <div
-            aria-hidden
-            className="absolute inset-0 opacity-25"
-            style={{
-              backgroundImage:
-                "radial-gradient(500px 260px at 15% 15%, rgba(255,255,255,0.45), transparent), radial-gradient(600px 320px at 85% 85%, rgba(255,255,255,0.25), transparent)",
-            }}
-          />
-          <div
-            aria-hidden
-            className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-white/15"
-          />
-          <div
-            aria-hidden
-            className="absolute -bottom-32 -left-16 h-96 w-96 rounded-full border border-white/10"
-          />
-          <div className="relative max-w-2xl">
-            <h2 className="font-display text-3xl font-bold md:text-5xl">
-              Ready to Modernize Your Legal Workflow?
-            </h2>
-            <p className="mt-4 text-base opacity-90 md:text-lg">
-              Whether you're an Advocate managing hundreds of cases or a Client tracking one important matter, Kanoonify brings everything together in one secure platform.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-8px_rgba(0,0,0,0.4)]"
-              >
-                Request Demo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
-              >
-                Contact Us
-              </Link>
+            className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-primary to-primary-dark px-8 py-16 text-primary-foreground md:px-16"
+          >
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-25"
+              style={{
+                backgroundImage:
+                  "radial-gradient(500px 260px at 15% 15%, rgba(255,255,255,0.45), transparent), radial-gradient(600px 320px at 85% 85%, rgba(255,255,255,0.25), transparent)",
+              }}
+            />
+            <div
+              aria-hidden
+              className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-white/15"
+            />
+            <div
+              aria-hidden
+              className="absolute -bottom-32 -left-16 h-96 w-96 rounded-full border border-white/10"
+            />
+            <div className="relative max-w-2xl">
+              <h2 className="font-display text-3xl font-bold md:text-5xl">
+                Ready to Modernize Your Legal Workflow?
+              </h2>
+              <p className="mt-4 text-base opacity-90 md:text-lg">
+                Whether you're an Advocate managing hundreds of cases or a Client tracking one important matter, Kanunify brings everything together in one secure platform.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-8px_rgba(0,0,0,0.4)]"
+                >
+                  Request Demo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

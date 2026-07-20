@@ -56,16 +56,18 @@ function Hero() {
         }}
       />
       <div className="container-page py-16 md:py-20 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted-foreground">
-          Features
-        </div>
-        <h1 className="mx-auto mt-5 max-w-5xl font-display text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
-          <span className="block">Everything You Need to Manage</span>
-          <span className="block">Legal Matters Digitally</span>
-        </h1>
-        <p className="mx-auto mt-6 max-w-5xl text-base text-muted-foreground md:text-lg lg:whitespace-nowrap">
-          A complete toolkit for advocates and clients — from digital case tracking to secure cloud storage.
-        </p>
+        <Reveal>
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted-foreground">
+            Features
+          </div>
+          <h1 className="mx-auto mt-5 max-w-5xl font-display text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+            <span className="block">Everything You Need to Manage</span>
+            <span className="block">Legal Matters Digitally</span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-5xl text-base text-muted-foreground md:text-lg lg:whitespace-nowrap">
+            A complete toolkit for advocates and clients — from digital case tracking to secure cloud storage.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
@@ -189,26 +191,30 @@ function Security() {
   return (
     <section className="mt-8 border-y border-border bg-surface py-16 md:py-20">
       <div className="container-page">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-primary">
-            <Shield className="h-3.5 w-3.5" /> Security
-          </div>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-4xl">
-            Built with government-grade reliability
-          </h2>
-          <p className="mt-4 text-base text-muted-foreground lg:whitespace-nowrap">
-            Your practice data is protected with encryption, secure infrastructure and role-based controls.
-          </p>
-        </div>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map(({ icon: Icon, t, d }) => (
-            <div key={t} className="rounded-2xl border border-border bg-background p-6 shadow-[var(--shadow-soft)] transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-card)]">
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
-                <Icon className="h-5 w-5" />
-              </div>
-              <div className="mt-4 font-display text-base font-semibold">{t}</div>
-              <div className="mt-1 text-sm text-muted-foreground">{d}</div>
+        <Reveal>
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-primary">
+              <Shield className="h-3.5 w-3.5" /> Security
             </div>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-4xl">
+              Built with government-grade reliability
+            </h2>
+            <p className="mt-4 text-base text-muted-foreground lg:whitespace-nowrap">
+              Your practice data is protected with encryption, secure infrastructure and role-based controls.
+            </p>
+          </div>
+        </Reveal>
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map(({ icon: Icon, t, d }, i) => (
+            <Reveal key={t} delay={i * 80}>
+              <div className="rounded-2xl border border-border bg-background p-6 shadow-[var(--shadow-soft)] transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-card)]">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div className="mt-4 font-display text-base font-semibold">{t}</div>
+                <div className="mt-1 text-sm text-muted-foreground">{d}</div>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -220,32 +226,34 @@ function CTA() {
   return (
     <section className="py-16 md:py-20">
       <div className="container-page">
-        <div className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-primary to-primary-dark p-10 text-center text-primary-foreground md:p-16">
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-20"
-            style={{
-              backgroundImage:
-                "radial-gradient(500px 260px at 20% 20%, rgba(255,255,255,0.45), transparent), radial-gradient(600px 320px at 80% 80%, rgba(255,255,255,0.25), transparent)",
-            }}
-          />
-          <div aria-hidden className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-white/15" />
-          <div aria-hidden className="absolute -bottom-32 -left-16 h-96 w-96 rounded-full border border-white/10" />
-          <div className="relative">
-            <h2 className="font-display text-3xl font-bold md:text-4xl">See Kanoonify in Action</h2>
-            <p className="mx-auto mt-3 max-w-3xl opacity-90 lg:whitespace-nowrap">
-              Book a personalized walkthrough with our team and explore every feature live.
-            </p>
-            <div className="mt-8">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-8px_rgba(0,0,0,0.4)]"
-              >
-                Request Demo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
+        <Reveal>
+          <div className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-primary to-primary-dark p-10 text-center text-primary-foreground md:p-16">
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-20"
+              style={{
+                backgroundImage:
+                  "radial-gradient(500px 260px at 20% 20%, rgba(255,255,255,0.45), transparent), radial-gradient(600px 320px at 80% 80%, rgba(255,255,255,0.25), transparent)",
+              }}
+            />
+            <div aria-hidden className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-white/15" />
+            <div aria-hidden className="absolute -bottom-32 -left-16 h-96 w-96 rounded-full border border-white/10" />
+            <div className="relative">
+              <h2 className="font-display text-3xl font-bold md:text-4xl">See Kanunify in Action</h2>
+              <p className="mx-auto mt-3 max-w-3xl opacity-90 lg:whitespace-nowrap">
+                Book a personalized walkthrough with our team and explore every feature live.
+              </p>
+              <div className="mt-8">
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-8px_rgba(0,0,0,0.4)]"
+                >
+                  Request Demo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

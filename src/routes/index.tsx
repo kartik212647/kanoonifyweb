@@ -184,24 +184,27 @@ function Trust() {
   return (
     <section className="border-y border-border bg-surface py-14">
       <div className="container-page">
-        <SectionHeader
-          center
-          wide
-          eyebrow="Trusted"
-          title="Trusted Digital Platform for India's Legal Ecosystem"
-          nowrapTitle
-        />
+        <Reveal>
+          <SectionHeader
+            center
+            wide
+            eyebrow="Trusted"
+            title="Trusted Digital Platform for India's Legal Ecosystem"
+            nowrapTitle
+          />
+        </Reveal>
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
-          {items.map(({ icon: Icon, t }) => (
-            <div
-              key={t}
-              className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-background p-6 text-center shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-card)]"
-            >
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
-                <Icon className="h-6 w-6" />
+          {items.map(({ icon: Icon, t }, i) => (
+            <Reveal key={t} delay={i * 70}>
+              <div
+                className="group flex flex-col items-center gap-3 rounded-2xl border border-border bg-background p-6 text-center shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-card)]"
+              >
+                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <div className="text-sm font-semibold">{t}</div>
               </div>
-              <div className="text-sm font-semibold">{t}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -221,7 +224,7 @@ function Problem() {
   return (
     <section className="py-16 md:py-20">
       <div className="container-page grid gap-12 md:grid-cols-2 md:items-center">
-        <div>
+        <Reveal>
           <SectionHeader
             eyebrow="The Problem"
             title="Legal Case Management Shouldn't Be Complicated."
@@ -233,18 +236,19 @@ function Problem() {
           >
             See how we solve it <ArrowRight className="h-4 w-4" />
           </Link>
-        </div>
+        </Reveal>
         <ul className="grid gap-3 sm:grid-cols-2">
-          {pains.map((p) => (
-            <li
-              key={p}
-              className="flex items-start gap-3 rounded-2xl border border-border bg-background p-4"
-            >
-              <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
-                <span className="block h-1.5 w-1.5 rounded-full bg-primary" />
-              </span>
-              <span className="text-sm font-medium">{p}</span>
-            </li>
+          {pains.map((p, i) => (
+            <Reveal as="li" key={p} delay={i * 60}>
+              <div
+                className="flex items-start gap-3 rounded-2xl border border-border bg-background p-4"
+              >
+                <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
+                  <span className="block h-1.5 w-1.5 rounded-full bg-primary" />
+                </span>
+                <span className="text-sm font-medium">{p}</span>
+              </div>
+            </Reveal>
           ))}
         </ul>
       </div>
@@ -305,21 +309,33 @@ function Showcase() {
   return (
     <section className="py-16 md:py-20">
       <div className="container-page">
-        <SectionHeader
-          center
-          wide
-          eyebrow="App Showcase"
-          title="Designed for Advocates, Loved by Clients"
-          description="Peek into a few screens from the Kanoonify app."
-          nowrapTitle
-        />
+        <Reveal>
+          <SectionHeader
+            center
+            wide
+            eyebrow="App Showcase"
+            title="Designed for Advocates, Loved by Clients"
+            description="Peek into a few screens from the Kanunify app."
+            nowrapTitle
+          />
+        </Reveal>
         <div className="mt-12 grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-3 md:gap-10 place-items-center">
-          <div className="animate-float"><PhoneFrame><DashboardScreen /></PhoneFrame></div>
-          <div className="animate-float-delay"><PhoneFrame><FindLawyerScreen /></PhoneFrame></div>
-          <div className="animate-float"><PhoneFrame><CaseDetailsScreen /></PhoneFrame></div>
-          <div className="animate-float-delay"><PhoneFrame><HearingScreen /></PhoneFrame></div>
-          <div className="animate-float"><PhoneFrame><DocumentScreen /></PhoneFrame></div>
-          <div className="animate-float-delay"><PhoneFrame><ClientDashboardScreen /></PhoneFrame></div>
+          {[
+            { S: DashboardScreen, f: "animate-float" },
+            { S: FindLawyerScreen, f: "animate-float-delay" },
+            { S: CaseDetailsScreen, f: "animate-float" },
+            { S: HearingScreen, f: "animate-float-delay" },
+            { S: DocumentScreen, f: "animate-float" },
+            { S: ClientDashboardScreen, f: "animate-float-delay" },
+          ].map(({ S, f }, i) => (
+            <Reveal key={i} delay={i * 90}>
+              <div className={f}>
+                <PhoneFrame>
+                  <S />
+                </PhoneFrame>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
@@ -336,24 +352,28 @@ function HowItWorks() {
   return (
     <section className="bg-surface py-16 md:py-20 border-y border-border">
       <div className="container-page">
-        <SectionHeader
-          center
-          eyebrow="How it works"
-          title="Get started in four simple steps"
-        />
+        <Reveal>
+          <SectionHeader
+            center
+            eyebrow="How it works"
+            title="Get started in four simple steps"
+          />
+        </Reveal>
         <div className="relative mt-12 grid gap-6 md:grid-cols-4">
           <div className="pointer-events-none absolute left-6 right-6 top-6 hidden h-px bg-gradient-to-r from-transparent via-border to-transparent md:block" />
           {steps.map((s, i) => (
-            <div key={s.t} className="relative rounded-2xl border border-border bg-background p-6 shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)]">
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-[var(--shadow-glow)]">
-                <s.icon className="h-5 w-5" />
+            <Reveal key={s.t} delay={i * 100}>
+              <div className="relative rounded-2xl border border-border bg-background p-6 shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)]">
+                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-[var(--shadow-glow)]">
+                  <s.icon className="h-5 w-5" />
+                </div>
+                <div className="mt-4 text-xs font-semibold uppercase tracking-wider text-primary">
+                  Step {i + 1}
+                </div>
+                <div className="mt-1 font-display text-lg font-semibold">{s.t}</div>
+                <div className="mt-1 text-sm text-muted-foreground">{s.d}</div>
               </div>
-              <div className="mt-4 text-xs font-semibold uppercase tracking-wider text-primary">
-                Step {i + 1}
-              </div>
-              <div className="mt-1 font-display text-lg font-semibold">{s.t}</div>
-              <div className="mt-1 text-sm text-muted-foreground">{s.d}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -379,36 +399,39 @@ function WhoFor() {
   return (
     <section className="py-16 md:py-20">
       <div className="container-page">
-        <SectionHeader center eyebrow="Who is it for" title="Built for Both Sides of the Courtroom" nowrapTitle />
+        <Reveal>
+          <SectionHeader center eyebrow="Who is it for" title="Built for Both Sides of the Courtroom" nowrapTitle />
+        </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {cards.map((c) => (
-            <div
-              key={c.title}
-              className="group relative overflow-hidden rounded-3xl border border-border bg-background p-8 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-card)] md:p-10"
-            >
+          {cards.map((c, i) => (
+            <Reveal key={c.title} delay={i * 120}>
               <div
-                aria-hidden
-                className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-primary/5 blur-2xl transition group-hover:bg-primary/15"
-              />
-              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-[var(--shadow-glow)]">
-                <c.icon className="h-6 w-6" />
-              </div>
-              <h3 className="mt-6 font-display text-2xl font-bold">{c.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{c.tagline}</p>
-              <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
-                {c.points.map((p) => (
-                  <li key={p} className="flex items-center gap-2 text-sm font-medium">
-                    <CheckCircle2 className="h-4 w-4 text-primary" /> {p}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to="/contact"
-                className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition hover:gap-2.5"
+                className="group relative overflow-hidden rounded-3xl border border-border bg-background p-8 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-card)] md:p-10"
               >
-                Request a demo <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-primary/5 blur-2xl transition group-hover:bg-primary/15"
+                />
+                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-[var(--shadow-glow)]">
+                  <c.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-6 font-display text-2xl font-bold">{c.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{c.tagline}</p>
+                <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
+                  {c.points.map((p) => (
+                    <li key={p} className="flex items-center gap-2 text-sm font-medium">
+                      <CheckCircle2 className="h-4 w-4 text-primary" /> {p}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/contact"
+                  className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition hover:gap-2.5"
+                >
+                  Request a demo <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -430,15 +453,19 @@ function Why() {
   return (
     <section className="bg-surface py-16 md:py-20 border-y border-border">
       <div className="container-page">
-        <SectionHeader center eyebrow="Why Kanoonify" title="Why thousands will choose Kanoonify" />
+        <Reveal>
+          <SectionHeader center eyebrow="Why Kanunify" title="Why thousands will choose Kanunify" />
+        </Reveal>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {points.map(({ icon: Icon, t }) => (
-            <div key={t} className="flex items-center gap-3 rounded-2xl border border-border bg-background p-4 transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[var(--shadow-soft)]">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
-                <Icon className="h-5 w-5" />
+          {points.map(({ icon: Icon, t }, i) => (
+            <Reveal key={t} delay={i * 60}>
+              <div className="flex items-center gap-3 rounded-2xl border border-border bg-background p-4 transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[var(--shadow-soft)]">
+                <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div className="text-sm font-semibold">{t}</div>
               </div>
-              <div className="text-sm font-semibold">{t}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
@@ -450,48 +477,50 @@ function FinalCTA() {
   return (
     <section className="py-16 md:py-20">
       <div className="container-page">
-        <div
-          className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-primary to-primary-dark px-8 py-16 text-primary-foreground md:px-16"
-        >
+        <Reveal>
           <div
-            aria-hidden
-            className="absolute inset-0 opacity-25"
-            style={{
-              backgroundImage:
-                "radial-gradient(500px 260px at 15% 15%, rgba(255,255,255,0.45), transparent), radial-gradient(600px 320px at 85% 85%, rgba(255,255,255,0.25), transparent)",
-            }}
-          />
-          <div
-            aria-hidden
-            className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-white/15"
-          />
-          <div
-            aria-hidden
-            className="absolute -bottom-32 -left-16 h-96 w-96 rounded-full border border-white/10"
-          />
-          <div className="relative max-w-2xl">
-            <h2 className="font-display text-3xl font-bold md:text-5xl">
-              Ready to Modernize Your Legal Workflow?
-            </h2>
-            <p className="mt-4 text-base opacity-90 md:text-lg">
-              Whether you're an Advocate managing hundreds of cases or a Client tracking one important matter, Kanoonify brings everything together in one secure platform.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-8px_rgba(0,0,0,0.4)]"
-              >
-                Request Demo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
-              >
-                Contact Us
-              </Link>
+            className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-primary to-primary-dark px-8 py-16 text-primary-foreground md:px-16"
+          >
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-25"
+              style={{
+                backgroundImage:
+                  "radial-gradient(500px 260px at 15% 15%, rgba(255,255,255,0.45), transparent), radial-gradient(600px 320px at 85% 85%, rgba(255,255,255,0.25), transparent)",
+              }}
+            />
+            <div
+              aria-hidden
+              className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-white/15"
+            />
+            <div
+              aria-hidden
+              className="absolute -bottom-32 -left-16 h-96 w-96 rounded-full border border-white/10"
+            />
+            <div className="relative max-w-2xl">
+              <h2 className="font-display text-3xl font-bold md:text-5xl">
+                Ready to Modernize Your Legal Workflow?
+              </h2>
+              <p className="mt-4 text-base opacity-90 md:text-lg">
+                Whether you're an Advocate managing hundreds of cases or a Client tracking one important matter, Kanunify brings everything together in one secure platform.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-8px_rgba(0,0,0,0.4)]"
+                >
+                  Request Demo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20"
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

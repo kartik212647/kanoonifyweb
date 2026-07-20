@@ -385,19 +385,21 @@ export function DocumentScreen() {
       <div className="mx-4 mt-3 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
         Templates
       </div>
-      <div className="mx-4 mt-1.5 grid grid-cols-2 gap-2">
+      <div className="mx-4 mt-1.5 grid gap-2">
         {[
-          "Bail Application",
-          "Vakalatnama",
-          "Legal Notice",
-          "Rent Agreement",
-          "Affidavit",
-          "Plaint Draft",
+          "Gate Pass",
+          "Summoning",
+          "Exemption",
         ].map((t) => (
-          <div key={t} className="rounded-xl border border-border p-2">
-            <FileText className="h-3.5 w-3.5 text-primary" />
-            <div className="mt-1 text-[9.5px] font-semibold leading-tight">{t}</div>
-            <div className="mt-0.5 text-[8px] text-muted-foreground">PDF · DOCX</div>
+          <div key={t} className="flex items-center gap-2 rounded-xl border border-border p-2.5">
+            <div className="grid h-8 w-8 place-items-center rounded-lg bg-primary/10 text-primary">
+              <FileText className="h-4 w-4" />
+            </div>
+            <div className="flex-1">
+              <div className="text-[10.5px] font-semibold leading-tight">{t}</div>
+              <div className="mt-0.5 text-[8px] text-muted-foreground">PDF · DOCX</div>
+            </div>
+            <ChevronRight className="h-3.5 w-3.5 text-muted-foreground" />
           </div>
         ))}
       </div>

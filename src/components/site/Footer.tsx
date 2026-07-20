@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, Linkedin, Twitter, Instagram } from "lucide-react";
-import logoFull from "@/assets/kanoonify-wordmark.png.asset.json";
+import logoIcon from "@/assets/kanunify-icon.jpeg.asset.json";
 
 export default function Footer() {
   return (
@@ -8,8 +8,9 @@ export default function Footer() {
       <div className="container-page py-12">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
-            <Link to="/" className="inline-block">
-              <img src={logoFull.url} alt="Kanoonify" className="h-16 md:h-20 w-auto" />
+            <Link to="/" className="inline-flex items-center gap-3">
+              <img src={logoIcon.url} alt="Kanunify" className="h-12 w-12 rounded-xl object-contain shadow-[var(--shadow-soft)]" />
+              <span className="font-display text-2xl font-bold text-primary">Kanunify</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
               India's modern legal operating system for advocates and clients. Manage cases, hearings and collaboration — all in one place.

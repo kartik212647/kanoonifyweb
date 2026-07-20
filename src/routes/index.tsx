@@ -399,36 +399,39 @@ function WhoFor() {
   return (
     <section className="py-16 md:py-20">
       <div className="container-page">
-        <SectionHeader center eyebrow="Who is it for" title="Built for Both Sides of the Courtroom" nowrapTitle />
+        <Reveal>
+          <SectionHeader center eyebrow="Who is it for" title="Built for Both Sides of the Courtroom" nowrapTitle />
+        </Reveal>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {cards.map((c) => (
-            <div
-              key={c.title}
-              className="group relative overflow-hidden rounded-3xl border border-border bg-background p-8 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-card)] md:p-10"
-            >
+          {cards.map((c, i) => (
+            <Reveal key={c.title} delay={i * 120}>
               <div
-                aria-hidden
-                className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-primary/5 blur-2xl transition group-hover:bg-primary/15"
-              />
-              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-[var(--shadow-glow)]">
-                <c.icon className="h-6 w-6" />
-              </div>
-              <h3 className="mt-6 font-display text-2xl font-bold">{c.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{c.tagline}</p>
-              <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
-                {c.points.map((p) => (
-                  <li key={p} className="flex items-center gap-2 text-sm font-medium">
-                    <CheckCircle2 className="h-4 w-4 text-primary" /> {p}
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to="/contact"
-                className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition hover:gap-2.5"
+                className="group relative overflow-hidden rounded-3xl border border-border bg-background p-8 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-card)] md:p-10"
               >
-                Request a demo <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-primary/5 blur-2xl transition group-hover:bg-primary/15"
+                />
+                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-[var(--shadow-glow)]">
+                  <c.icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-6 font-display text-2xl font-bold">{c.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{c.tagline}</p>
+                <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
+                  {c.points.map((p) => (
+                    <li key={p} className="flex items-center gap-2 text-sm font-medium">
+                      <CheckCircle2 className="h-4 w-4 text-primary" /> {p}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/contact"
+                  className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition hover:gap-2.5"
+                >
+                  Request a demo <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

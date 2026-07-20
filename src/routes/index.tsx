@@ -224,7 +224,7 @@ function Problem() {
   return (
     <section className="py-16 md:py-20">
       <div className="container-page grid gap-12 md:grid-cols-2 md:items-center">
-        <div>
+        <Reveal>
           <SectionHeader
             eyebrow="The Problem"
             title="Legal Case Management Shouldn't Be Complicated."
@@ -236,18 +236,19 @@ function Problem() {
           >
             See how we solve it <ArrowRight className="h-4 w-4" />
           </Link>
-        </div>
+        </Reveal>
         <ul className="grid gap-3 sm:grid-cols-2">
-          {pains.map((p) => (
-            <li
-              key={p}
-              className="flex items-start gap-3 rounded-2xl border border-border bg-background p-4"
-            >
-              <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
-                <span className="block h-1.5 w-1.5 rounded-full bg-primary" />
-              </span>
-              <span className="text-sm font-medium">{p}</span>
-            </li>
+          {pains.map((p, i) => (
+            <Reveal as="li" key={p} delay={i * 60}>
+              <div
+                className="flex items-start gap-3 rounded-2xl border border-border bg-background p-4"
+              >
+                <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
+                  <span className="block h-1.5 w-1.5 rounded-full bg-primary" />
+                </span>
+                <span className="text-sm font-medium">{p}</span>
+              </div>
+            </Reveal>
           ))}
         </ul>
       </div>

@@ -28,6 +28,9 @@ import {
   DashboardScreen,
   FindLawyerScreen,
   HearingScreen,
+  CaseDetailsScreen,
+  DocumentScreen,
+  ClientDashboardScreen,
 } from "@/components/site/PhoneMockup";
 
 export const Route = createFileRoute("/")({

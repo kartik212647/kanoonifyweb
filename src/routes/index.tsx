@@ -352,24 +352,28 @@ function HowItWorks() {
   return (
     <section className="bg-surface py-16 md:py-20 border-y border-border">
       <div className="container-page">
-        <SectionHeader
-          center
-          eyebrow="How it works"
-          title="Get started in four simple steps"
-        />
+        <Reveal>
+          <SectionHeader
+            center
+            eyebrow="How it works"
+            title="Get started in four simple steps"
+          />
+        </Reveal>
         <div className="relative mt-12 grid gap-6 md:grid-cols-4">
           <div className="pointer-events-none absolute left-6 right-6 top-6 hidden h-px bg-gradient-to-r from-transparent via-border to-transparent md:block" />
           {steps.map((s, i) => (
-            <div key={s.t} className="relative rounded-2xl border border-border bg-background p-6 shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)]">
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-[var(--shadow-glow)]">
-                <s.icon className="h-5 w-5" />
+            <Reveal key={s.t} delay={i * 100}>
+              <div className="relative rounded-2xl border border-border bg-background p-6 shadow-[var(--shadow-soft)] transition hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)]">
+                <div className="grid h-12 w-12 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-[var(--shadow-glow)]">
+                  <s.icon className="h-5 w-5" />
+                </div>
+                <div className="mt-4 text-xs font-semibold uppercase tracking-wider text-primary">
+                  Step {i + 1}
+                </div>
+                <div className="mt-1 font-display text-lg font-semibold">{s.t}</div>
+                <div className="mt-1 text-sm text-muted-foreground">{s.d}</div>
               </div>
-              <div className="mt-4 text-xs font-semibold uppercase tracking-wider text-primary">
-                Step {i + 1}
-              </div>
-              <div className="mt-1 font-display text-lg font-semibold">{s.t}</div>
-              <div className="mt-1 text-sm text-muted-foreground">{s.d}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

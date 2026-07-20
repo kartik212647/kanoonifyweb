@@ -80,19 +80,19 @@ function FormSection() {
   return (
     <section className="pb-4">
       <div className="container-page grid gap-8 md:grid-cols-5">
-        <div className="md:col-span-2">
+        <Reveal className="md:col-span-2">
           <h2 className="font-display text-2xl font-bold">Request a product demonstration</h2>
           <p className="mt-3 text-sm text-muted-foreground">
-            Learn how Kanoonify simplifies legal case management for advocates and clients across India.
+            Learn how Kanunify simplifies legal case management for advocates and clients across India.
           </p>
           <ul className="mt-6 space-y-3 text-sm">
             {["Personalised walkthrough", "Advocate & client workflows", "Security & compliance overview", "Onboarding roadmap"].map((p) => (
               <li key={p} className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> {p}</li>
             ))}
           </ul>
-        </div>
+        </Reveal>
 
-        <div className="md:col-span-3">
+        <Reveal className="md:col-span-3" delay={120}>
           <form onSubmit={onSubmit} className="rounded-3xl border border-border bg-background p-6 shadow-[var(--shadow-card)] md:p-8">
             {sent ? (
               <div className="flex flex-col items-center py-10 text-center">

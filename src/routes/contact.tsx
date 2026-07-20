@@ -206,23 +206,27 @@ function FAQ() {
   return (
     <section className="bg-surface py-16 md:py-20 border-y border-border">
       <div className="container-page">
-        <div className="mx-auto max-w-2xl text-center">
-          <div className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">FAQ</div>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-4xl">
-            Questions, answered
-          </h2>
-        </div>
+        <Reveal>
+          <div className="mx-auto max-w-2xl text-center">
+            <div className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">FAQ</div>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-4xl">
+              Questions, answered
+            </h2>
+          </div>
+        </Reveal>
         <div className="mx-auto mt-10 max-w-3xl divide-y divide-border rounded-3xl border border-border bg-background shadow-[var(--shadow-soft)]">
           {faqs.map((f, i) => (
-            <details key={i} className="group px-6 py-5 open:bg-surface/60">
-              <summary className="flex cursor-pointer items-center justify-between gap-4 text-sm font-semibold">
-                {f.q}
-                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full border border-border text-primary transition group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-3 text-sm text-muted-foreground">{f.a}</p>
-            </details>
+            <Reveal key={i} delay={i * 60}>
+              <details className="group px-6 py-5 open:bg-surface/60">
+                <summary className="flex cursor-pointer items-center justify-between gap-4 text-sm font-semibold">
+                  {f.q}
+                  <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full border border-border text-primary transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-3 text-sm text-muted-foreground">{f.a}</p>
+              </details>
+            </Reveal>
           ))}
         </div>
       </div>

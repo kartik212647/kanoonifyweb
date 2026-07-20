@@ -113,7 +113,7 @@ function Hero() {
           <div className="relative flex items-center justify-center gap-4">
             <div className="animate-float-delay hidden sm:block">
               <PhoneFrame className="scale-90 origin-bottom">
-                <FindLawyerScreen />
+                <ClientDashboardScreen />
               </PhoneFrame>
             </div>
             <div className="animate-float">

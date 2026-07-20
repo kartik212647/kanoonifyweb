@@ -56,16 +56,18 @@ function Hero() {
         }}
       />
       <div className="container-page py-16 md:py-20 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted-foreground">
-          Features
-        </div>
-        <h1 className="mx-auto mt-5 max-w-5xl font-display text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
-          <span className="block">Everything You Need to Manage</span>
-          <span className="block">Legal Matters Digitally</span>
-        </h1>
-        <p className="mx-auto mt-6 max-w-5xl text-base text-muted-foreground md:text-lg lg:whitespace-nowrap">
-          A complete toolkit for advocates and clients — from digital case tracking to secure cloud storage.
-        </p>
+        <Reveal>
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted-foreground">
+            Features
+          </div>
+          <h1 className="mx-auto mt-5 max-w-5xl font-display text-4xl font-bold leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+            <span className="block">Everything You Need to Manage</span>
+            <span className="block">Legal Matters Digitally</span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-5xl text-base text-muted-foreground md:text-lg lg:whitespace-nowrap">
+            A complete toolkit for advocates and clients — from digital case tracking to secure cloud storage.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

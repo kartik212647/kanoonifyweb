@@ -309,21 +309,33 @@ function Showcase() {
   return (
     <section className="py-16 md:py-20">
       <div className="container-page">
-        <SectionHeader
-          center
-          wide
-          eyebrow="App Showcase"
-          title="Designed for Advocates, Loved by Clients"
-          description="Peek into a few screens from the Kanoonify app."
-          nowrapTitle
-        />
+        <Reveal>
+          <SectionHeader
+            center
+            wide
+            eyebrow="App Showcase"
+            title="Designed for Advocates, Loved by Clients"
+            description="Peek into a few screens from the Kanunify app."
+            nowrapTitle
+          />
+        </Reveal>
         <div className="mt-12 grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-3 md:gap-10 place-items-center">
-          <div className="animate-float"><PhoneFrame><DashboardScreen /></PhoneFrame></div>
-          <div className="animate-float-delay"><PhoneFrame><FindLawyerScreen /></PhoneFrame></div>
-          <div className="animate-float"><PhoneFrame><CaseDetailsScreen /></PhoneFrame></div>
-          <div className="animate-float-delay"><PhoneFrame><HearingScreen /></PhoneFrame></div>
-          <div className="animate-float"><PhoneFrame><DocumentScreen /></PhoneFrame></div>
-          <div className="animate-float-delay"><PhoneFrame><ClientDashboardScreen /></PhoneFrame></div>
+          {[
+            { S: DashboardScreen, f: "animate-float" },
+            { S: FindLawyerScreen, f: "animate-float-delay" },
+            { S: CaseDetailsScreen, f: "animate-float" },
+            { S: HearingScreen, f: "animate-float-delay" },
+            { S: DocumentScreen, f: "animate-float" },
+            { S: ClientDashboardScreen, f: "animate-float-delay" },
+          ].map(({ S, f }, i) => (
+            <Reveal key={i} delay={i * 90}>
+              <div className={f}>
+                <PhoneFrame>
+                  <S />
+                </PhoneFrame>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

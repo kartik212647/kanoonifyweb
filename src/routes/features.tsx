@@ -191,26 +191,30 @@ function Security() {
   return (
     <section className="mt-8 border-y border-border bg-surface py-16 md:py-20">
       <div className="container-page">
-        <div className="mx-auto max-w-4xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-primary">
-            <Shield className="h-3.5 w-3.5" /> Security
-          </div>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-4xl">
-            Built with government-grade reliability
-          </h2>
-          <p className="mt-4 text-base text-muted-foreground lg:whitespace-nowrap">
-            Your practice data is protected with encryption, secure infrastructure and role-based controls.
-          </p>
-        </div>
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map(({ icon: Icon, t, d }) => (
-            <div key={t} className="rounded-2xl border border-border bg-background p-6 shadow-[var(--shadow-soft)] transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-card)]">
-              <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
-                <Icon className="h-5 w-5" />
-              </div>
-              <div className="mt-4 font-display text-base font-semibold">{t}</div>
-              <div className="mt-1 text-sm text-muted-foreground">{d}</div>
+        <Reveal>
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-primary">
+              <Shield className="h-3.5 w-3.5" /> Security
             </div>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-4xl">
+              Built with government-grade reliability
+            </h2>
+            <p className="mt-4 text-base text-muted-foreground lg:whitespace-nowrap">
+              Your practice data is protected with encryption, secure infrastructure and role-based controls.
+            </p>
+          </div>
+        </Reveal>
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map(({ icon: Icon, t, d }, i) => (
+            <Reveal key={t} delay={i * 80}>
+              <div className="rounded-2xl border border-border bg-background p-6 shadow-[var(--shadow-soft)] transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-card)]">
+                <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div className="mt-4 font-display text-base font-semibold">{t}</div>
+                <div className="mt-1 text-sm text-muted-foreground">{d}</div>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

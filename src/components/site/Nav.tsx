@@ -39,7 +39,7 @@ export default function Nav() {
       }`}
     >
       <div className="container-page flex h-20 items-center justify-between md:h-24">
-        <Logo className="h-14 md:h-16" />
+        <Logo className="h-11 md:h-12" />
         <nav className="hidden md:flex items-center gap-10">
           <Link
             to="/"

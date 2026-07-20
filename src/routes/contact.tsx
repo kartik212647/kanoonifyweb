@@ -238,30 +238,32 @@ function FinalCTA() {
   return (
     <section className="py-16 md:py-20">
       <div className="container-page">
-        <div className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-primary to-primary-dark p-10 text-center text-primary-foreground md:p-16">
-          <div
-            aria-hidden
-            className="absolute inset-0 opacity-25"
-            style={{
-              backgroundImage:
-                "radial-gradient(500px 260px at 15% 15%, rgba(255,255,255,0.45), transparent), radial-gradient(600px 320px at 85% 85%, rgba(255,255,255,0.25), transparent)",
-            }}
-          />
-          <div aria-hidden className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-white/15" />
-          <div aria-hidden className="absolute -bottom-32 -left-16 h-96 w-96 rounded-full border border-white/10" />
-          <div className="relative">
-            <h2 className="font-display text-3xl font-bold md:text-4xl">Ready to see Kanoonify?</h2>
-            <p className="mx-auto mt-3 max-w-xl opacity-90">
-              Book a personalised walkthrough tailored to your practice.
-            </p>
-            <Link
-              to="/contact"
-              className="group mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-8px_rgba(0,0,0,0.4)]"
-            >
-              Request Demo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
+        <Reveal>
+          <div className="relative overflow-hidden rounded-[2rem] border border-primary/20 bg-gradient-to-br from-primary to-primary-dark p-10 text-center text-primary-foreground md:p-16">
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-25"
+              style={{
+                backgroundImage:
+                  "radial-gradient(500px 260px at 15% 15%, rgba(255,255,255,0.45), transparent), radial-gradient(600px 320px at 85% 85%, rgba(255,255,255,0.25), transparent)",
+              }}
+            />
+            <div aria-hidden className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-white/15" />
+            <div aria-hidden className="absolute -bottom-32 -left-16 h-96 w-96 rounded-full border border-white/10" />
+            <div className="relative">
+              <h2 className="font-display text-3xl font-bold md:text-4xl">Ready to see Kanunify?</h2>
+              <p className="mx-auto mt-3 max-w-xl opacity-90">
+                Book a personalised walkthrough tailored to your practice.
+              </p>
+              <Link
+                to="/contact"
+                className="group mt-8 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary shadow-[0_10px_30px_-8px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-8px_rgba(0,0,0,0.4)]"
+              >
+                Request Demo <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

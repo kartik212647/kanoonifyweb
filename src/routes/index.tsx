@@ -453,15 +453,19 @@ function Why() {
   return (
     <section className="bg-surface py-16 md:py-20 border-y border-border">
       <div className="container-page">
-        <SectionHeader center eyebrow="Why Kanoonify" title="Why thousands will choose Kanoonify" />
+        <Reveal>
+          <SectionHeader center eyebrow="Why Kanunify" title="Why thousands will choose Kanunify" />
+        </Reveal>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {points.map(({ icon: Icon, t }) => (
-            <div key={t} className="flex items-center gap-3 rounded-2xl border border-border bg-background p-4 transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[var(--shadow-soft)]">
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
-                <Icon className="h-5 w-5" />
+          {points.map(({ icon: Icon, t }, i) => (
+            <Reveal key={t} delay={i * 60}>
+              <div className="flex items-center gap-3 rounded-2xl border border-border bg-background p-4 transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[var(--shadow-soft)]">
+                <div className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <div className="text-sm font-semibold">{t}</div>
               </div>
-              <div className="text-sm font-semibold">{t}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

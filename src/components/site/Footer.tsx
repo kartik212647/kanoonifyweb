@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, Linkedin, Twitter, Instagram } from "lucide-react";
-import logoFull from "@/assets/kanoonify-logo-full.png.asset.json";
+import logoFull from "@/assets/kanoonify-wordmark.png.asset.json";
 
 export default function Footer() {
   return (

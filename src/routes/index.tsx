@@ -28,6 +28,9 @@ import {
   DashboardScreen,
   FindLawyerScreen,
   HearingScreen,
+  CaseDetailsScreen,
+  DocumentScreen,
+  ClientDashboardScreen,
 } from "@/components/site/PhoneMockup";
 
 export const Route = createFileRoute("/")({
@@ -110,7 +113,7 @@ function Hero() {
           <div className="relative flex items-center justify-center gap-4">
             <div className="animate-float-delay hidden sm:block">
               <PhoneFrame className="scale-90 origin-bottom">
-                <FindLawyerScreen />
+                <ClientDashboardScreen />
               </PhoneFrame>
             </div>
             <div className="animate-float">
@@ -310,16 +313,13 @@ function Showcase() {
           description="Peek into a few screens from the Kanoonify app."
           nowrapTitle
         />
-        <div className="mt-12 flex flex-wrap items-end justify-center gap-6 md:gap-10">
-          <div className="animate-float">
-            <PhoneFrame><DashboardScreen /></PhoneFrame>
-          </div>
-          <div className="animate-float-delay -mb-6">
-            <PhoneFrame><FindLawyerScreen /></PhoneFrame>
-          </div>
-          <div className="animate-float">
-            <PhoneFrame><HearingScreen /></PhoneFrame>
-          </div>
+        <div className="mt-12 grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-3 md:gap-10 place-items-center">
+          <div className="animate-float"><PhoneFrame><DashboardScreen /></PhoneFrame></div>
+          <div className="animate-float-delay"><PhoneFrame><FindLawyerScreen /></PhoneFrame></div>
+          <div className="animate-float"><PhoneFrame><CaseDetailsScreen /></PhoneFrame></div>
+          <div className="animate-float-delay"><PhoneFrame><HearingScreen /></PhoneFrame></div>
+          <div className="animate-float"><PhoneFrame><DocumentScreen /></PhoneFrame></div>
+          <div className="animate-float-delay"><PhoneFrame><ClientDashboardScreen /></PhoneFrame></div>
         </div>
       </div>
     </section>

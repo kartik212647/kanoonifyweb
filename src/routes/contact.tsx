@@ -43,15 +43,17 @@ function Hero() {
         }}
       />
       <div className="container-page py-16 md:py-20 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted-foreground">
-          Contact
-        </div>
-        <h1 className="mx-auto mt-5 max-w-3xl font-display text-4xl font-bold tracking-tight md:text-6xl">
-          Let's Build the Future of Legal Technology Together
-        </h1>
-        <p className="mx-auto mt-4 max-w-4xl text-base text-muted-foreground md:text-lg lg:whitespace-nowrap">
-          Reach out for a product demo, inquiries or partnership opportunities.
-        </p>
+        <Reveal>
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-muted-foreground">
+            Contact
+          </div>
+          <h1 className="mx-auto mt-5 max-w-3xl font-display text-4xl font-bold tracking-tight md:text-6xl">
+            Let's Build the Future of Legal Technology Together
+          </h1>
+          <p className="mx-auto mt-4 max-w-4xl text-base text-muted-foreground md:text-lg lg:whitespace-nowrap">
+            Reach out for a product demo, inquiries or partnership opportunities.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

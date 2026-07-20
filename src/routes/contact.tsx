@@ -179,14 +179,16 @@ function ContactCards() {
   return (
     <section className="py-14">
       <div className="container-page grid gap-4 md:grid-cols-3">
-        {cards.map(({ icon: Icon, t, d }) => (
-          <div key={t} className="rounded-2xl border border-border bg-background p-6 shadow-[var(--shadow-soft)] transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-card)]">
-            <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
-              <Icon className="h-5 w-5" />
+        {cards.map(({ icon: Icon, t, d }, i) => (
+          <Reveal key={t} delay={i * 100}>
+            <div className="rounded-2xl border border-border bg-background p-6 shadow-[var(--shadow-soft)] transition hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-card)]">
+              <div className="grid h-11 w-11 place-items-center rounded-xl bg-primary/10 text-primary">
+                <Icon className="h-5 w-5" />
+              </div>
+              <div className="mt-4 font-display text-base font-semibold">{t}</div>
+              <div className="mt-1 text-sm text-muted-foreground">{d}</div>
             </div>
-            <div className="mt-4 font-display text-base font-semibold">{t}</div>
-            <div className="mt-1 text-sm text-muted-foreground">{d}</div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

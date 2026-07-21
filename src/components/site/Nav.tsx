@@ -1,13 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoAsset from "@/assets/kanunify-icon.jpeg.asset.json";
 
 export function Logo({ className = "h-11" }: { className?: string }) {
   return (
     <Link to="/" className="flex items-center" aria-label="Kanoonify home">
       <img
-        src={logoAsset.url}
+        src="/kanoonify-logo.jpeg"
         alt="Kanoonify"
         className={`${className} w-auto rounded-xl object-contain shadow-[var(--shadow-soft)]`}
         draggable={false}

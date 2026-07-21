@@ -5,10 +5,10 @@ import logoAsset from "@/assets/kanunify-icon.jpeg.asset.json";
 
 export function Logo({ className = "h-11" }: { className?: string }) {
   return (
-    <Link to="/" className="flex items-center" aria-label="Kanunify home">
+    <Link to="/" className="flex items-center" aria-label="Kanoonify home">
       <img
         src={logoAsset.url}
-        alt="Kanunify"
+        alt="Kanoonify"
         className={`${className} w-auto rounded-xl object-contain shadow-[var(--shadow-soft)]`}
         draggable={false}
       />

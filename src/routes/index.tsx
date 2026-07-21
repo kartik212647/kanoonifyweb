@@ -315,7 +315,7 @@ function Showcase() {
             wide
             eyebrow="App Showcase"
             title="Designed for Advocates, Loved by Clients"
-            description="Peek into a few screens from the Kanunify app."
+            description="Peek into a few screens from the Kanoonify app."
             nowrapTitle
           />
         </Reveal>
@@ -454,7 +454,7 @@ function Why() {
     <section className="bg-surface py-16 md:py-20 border-y border-border">
       <div className="container-page">
         <Reveal>
-          <SectionHeader center eyebrow="Why Kanunify" title="Why thousands will choose Kanunify" />
+          <SectionHeader center eyebrow="Why Kanoonify" title="Why thousands will choose Kanoonify" />
         </Reveal>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {points.map(({ icon: Icon, t }, i) => (
@@ -502,7 +502,7 @@ function FinalCTA() {
                 Ready to Modernize Your Legal Workflow?
               </h2>
               <p className="mt-4 text-base opacity-90 md:text-lg">
-                Whether you're an Advocate managing hundreds of cases or a Client tracking one important matter, Kanunify brings everything together in one secure platform.
+                Whether you're an Advocate managing hundreds of cases or a Client tracking one important matter, Kanoonify brings everything together in one secure platform.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link

@@ -110,8 +110,8 @@ function Hero() {
               filter: "blur(30px)",
             }}
           />
-          <div className="relative flex items-center justify-center gap-4">
-            <div className="animate-float-delay hidden sm:block">
+          <div className="relative mx-auto flex w-full items-center justify-center gap-2 sm:gap-4 origin-center scale-[0.68] sm:scale-90 md:scale-[0.62] lg:scale-90 xl:scale-100">
+            <div className="animate-float-delay">
               <PhoneFrame className="scale-90 origin-bottom">
                 <ClientDashboardScreen />
               </PhoneFrame>

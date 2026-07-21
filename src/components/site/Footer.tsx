@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, Phone, Linkedin, Twitter, Instagram } from "lucide-react";
-import logoIcon from "@/assets/kanunify-icon.jpeg.asset.json";
 
 export default function Footer() {
   return (
@@ -9,7 +8,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <Link to="/" className="inline-flex items-center gap-3">
-              <img src={logoIcon.url} alt="Kanoonify" className="h-12 w-12 rounded-xl object-contain shadow-[var(--shadow-soft)]" />
+              <img src="/kanoonify-logo.jpeg" alt="Kanoonify" className="h-12 w-12 rounded-xl object-contain shadow-[var(--shadow-soft)]" />
               <span className="font-display text-2xl font-bold text-primary">Kanoonify</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">

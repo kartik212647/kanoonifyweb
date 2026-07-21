@@ -83,7 +83,7 @@ function FormSection() {
         <Reveal className="md:col-span-2">
           <h2 className="font-display text-2xl font-bold">Request a product demonstration</h2>
           <p className="mt-3 text-sm text-muted-foreground">
-            Learn how Kanunify simplifies legal case management for advocates and clients across India.
+            Learn how Kanoonify simplifies legal case management for advocates and clients across India.
           </p>
           <ul className="mt-6 space-y-3 text-sm">
             {["Personalised walkthrough", "Advocate & client workflows", "Security & compliance overview", "Onboarding roadmap"].map((p) => (
@@ -251,7 +251,7 @@ function FinalCTA() {
             <div aria-hidden className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-white/15" />
             <div aria-hidden className="absolute -bottom-32 -left-16 h-96 w-96 rounded-full border border-white/10" />
             <div className="relative">
-              <h2 className="font-display text-3xl font-bold md:text-4xl">Ready to see Kanunify?</h2>
+              <h2 className="font-display text-3xl font-bold md:text-4xl">Ready to see Kanoonify?</h2>
               <p className="mx-auto mt-3 max-w-xl opacity-90">
                 Book a personalised walkthrough tailored to your practice.
               </p>

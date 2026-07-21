@@ -239,7 +239,7 @@ function CTA() {
             <div aria-hidden className="absolute -right-24 -top-24 h-72 w-72 rounded-full border border-white/15" />
             <div aria-hidden className="absolute -bottom-32 -left-16 h-96 w-96 rounded-full border border-white/10" />
             <div className="relative">
-              <h2 className="font-display text-3xl font-bold md:text-4xl">See Kanunify in Action</h2>
+              <h2 className="font-display text-3xl font-bold md:text-4xl">See Kanoonify in Action</h2>
               <p className="mx-auto mt-3 max-w-3xl opacity-90 lg:whitespace-nowrap">
                 Book a personalized walkthrough with our team and explore every feature live.
               </p>
